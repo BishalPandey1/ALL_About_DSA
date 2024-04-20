@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Define the structure for a node
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+// Function to create a new node
+struct Node* createNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    if (newNode == NULL) {
+        printf("Unable to allocate memory for the new node.\n");
+        exit(1);
+    }
+    newNode->data = data;
+    newNode->next = NULL;
+    return newNode;
+}
+
+// Function to insert a node at the beginning of the list
+void insertAtBeginning(struct Node** head, int data) {
+    struct Node* newNode = createNode(data);
+    newNode->next = *head;  // Link the new node to the current head
+    *head = newNode;        // Make the new node the new head
+}
+
+// Function to display the linked list
+void displayList(struct Node* head) {
+    while (head != NULL) {
+        printf("%d -> ", head->data);
+        head = head->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    struct Node* head = NULL;
+
+    // Create two initial nodes
+    struct Node* firstNode = createNode(10);
+    struct Node* secondNode = createNode(20);
+
+    // Link the initial nodes
+    firstNode->next = secondNode;
+    head = firstNode;
+
+    // Insert a new node at the beginning
+    insertAtBeginning(&head, 5);
+
+    printf("Linked list after inserting a node at the beginning:\n");
+    displayList(head);
+
+    return 0;
+}
