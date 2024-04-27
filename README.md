@@ -1,9 +1,5 @@
 <html>
   <head>
-    <style>
-      #aut{
-        text-size: bold;
-    </style>
   </head>
   <body>
     <di>    
