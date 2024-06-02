@@ -23,7 +23,7 @@ void del_last(struct node **head) {
 }
 
 int main() {
-    struct node *head = NULL; // Assuming head is initialized properly
+    struct node *head = NULL; 
     del_last(&head);
     struct node *ptr = head;
     while(ptr != NULL) {
