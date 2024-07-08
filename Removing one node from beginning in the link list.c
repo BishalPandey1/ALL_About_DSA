@@ -55,6 +55,5 @@ int main() {
 
     printf("List after removing the first node:\n");
     displayList(head);
-
     return 0;
 }
