@@ -38,7 +38,7 @@ void printList(struct Node* node) {
     printf("NULL\n");
 }
 
-// Main function
+// Main Function
 int main() {
     struct Node* head = NULL;
 
