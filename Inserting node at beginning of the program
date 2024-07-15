@@ -51,6 +51,5 @@ int main() {
 
     printf("Linked list after inserting a node at the beginning:\n");
     displayList(head);
-
     return 0;
 }
